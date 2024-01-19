@@ -56,8 +56,8 @@ export default function PostPage() {
           <Spinner size="xl" />
         </div>
       ) : (
-        <main className="p-3 flex flex-col max-w-6xl mx-auto min-h-screen max-w-[85rem]">
-          <h1 className="text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
+        <main className="p-3 flex flex-col mx-auto min-h-screen max-w-[85rem]">
+          <h1 className="text-3xl mt-10 p-3 text-center font-serif  mx-auto lg:text-4xl">
             {post && post.title}
           </h1>
           <Link
@@ -73,7 +73,7 @@ export default function PostPage() {
             alt={post && post.title}
             className="mt-10 p-3 max-h-[600px] w-full object-cover"
           />
-          <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs">
+          <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full text-xs">
             <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
             <span className="italic">
               {post && (post.content.length / 1000).toFixed(0)} mins read
@@ -81,9 +81,9 @@ export default function PostPage() {
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: post && post.content }}
-            className="p-3 max-w-2xl mx-auto w-full post-content"
+            className="p-3  mx-auto w-full post-content"
           ></div>
-          <div className="max-w-4xl mx-auto w-full">
+          <div className=" mx-auto w-full">
             <CallToAction />
           </div>
           <CommentSection postId={post._id} />
